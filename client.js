@@ -4,6 +4,8 @@ console.log( 'ready to start' );
 $( document ).ready( readyNow );
 
 
+let allEmployees = [];
+
 // This function will grab the employee info from the input fields and push it into the array
 function addEmployee(){
     console.log('in addEmployee');
@@ -17,8 +19,16 @@ function addEmployee(){
         salary: $( '#annualSalary' ).val()
     } // end newEmployee
 
-    console.log( 'newEmployee:', newEmployee );
+    // console.log( 'newEmployee:', newEmployee ); // check to see if my object works!
+
+    // push newEmployee object into array
+    allEmployees.push( newEmployee );
     
+    console.log( 'allEmployees:', allEmployees ); // pushing to array works!
+
+    // empty input fields
+    // gave my input fields a class to empty the inputs instead of listing them individually, and it works!
+    $( '.employeeInputs' ).val( '' );
     
 }
 
