@@ -40,3 +40,26 @@ Stretch | optional, stretches your understanding and may require additional rese
 
 ## Assignment Submission
 Check in your repo, then turn in your work via the Prime Academy Assignment Application at [http://primeacademy.io](http://primeacademy.io), as usual and don't hesitate to hit up the Slack channel as needed!
+
+
+
+
+MY STEPS
+----
+
+HTML
+    - input fields 
+    - submit button
+    - table for inputs
+    - container for running total
+    - delete button
+
+Script
+    - capture the click event
+    - get user input
+    - create objects from user input
+    - push objects into array
+    - display array on DOM
+    - display running total on DOM
+    - make the running total turn red if exceeds max $
+
