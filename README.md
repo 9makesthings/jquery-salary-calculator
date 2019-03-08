@@ -58,8 +58,8 @@ Script
     - capture the click event x
     - get user input x
     - create objects from user input x
-    - push objects into array
-    - display array on DOM
+    - push objects into array x
+    - display array on DOM x
     - display running total on DOM
     - make the running total turn red if exceeds max $
 

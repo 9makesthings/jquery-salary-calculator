@@ -29,6 +29,24 @@ function addEmployee(){
     // empty input fields
     // gave my input fields a class to empty the inputs instead of listing them individually, and it works!
     $( '.employeeInputs' ).val( '' );
+
+    displayEmployees();
+    
+}
+
+// function to display employees on the DOM
+function displayEmployees(){
+    console.log('in displayEmployees'); 
+
+    let updateTable = $( '#tableInputs' );
+    updateTable.empty();
+
+    for ( employee of allEmployees ){
+        // console.log( 'employee:', employee );
+        updateTable.append(`<tr><td> ${employee.first} </td><td> ${employee.last} </td><td> ${employee.id} </td><td> ${employee.title} </td><td> ${employee.salary} </td></tr>`);
+        
+    }
+
     
 }
 
