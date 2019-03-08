@@ -8,16 +8,16 @@ $( document ).ready( readyNow );
 function addEmployee(){
     console.log('in addEmployee');
 
-    // setting up the newEmployee object
-    // let newEmployee = {
-       let firstName = $( '#firstName' ).val(); // almost forgot to make sure this is working!
-    //     lastName = $( '#lastName' ).val();
-    //     idNumber = $( '#idNum' ).val();
-    //     title = $( '#jobTitle' ).val();
-    //     salary = $( '#annualSalary' ).val();
-    // }
+    // setting up the newEmployee object from user inputs
+    let newEmployee = {
+        first: $( '#firstName' ).val(), // almost forgot to make sure this is working! And it worked!
+        last: $( '#lastName' ).val(),
+        id: $( '#idNum' ).val(),
+        title: $( '#jobTitle' ).val(),
+        salary: $( '#annualSalary' ).val()
+    } // end newEmployee
 
-    console.log( 'firstName:', firstName );
+    console.log( 'newEmployee:', newEmployee );
     
     
 }

@@ -57,7 +57,7 @@ HTML
 Script
     - capture the click event x
     - get user input x
-    - create objects from user input
+    - create objects from user input x
     - push objects into array
     - display array on DOM
     - display running total on DOM
