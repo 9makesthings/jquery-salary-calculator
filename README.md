@@ -55,8 +55,8 @@ HTML
     - delete button x
 
 Script
-    - capture the click event
-    - get user input
+    - capture the click event x
+    - get user input x
     - create objects from user input
     - push objects into array
     - display array on DOM
