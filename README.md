@@ -48,11 +48,11 @@ MY STEPS
 ----
 
 HTML
-    - input fields 
-    - submit button
-    - table for inputs
-    - container for running total
-    - delete button
+    - input fields x
+    - submit button x
+    - table for inputs x
+    - container for running total x
+    - delete button x
 
 Script
     - capture the click event
