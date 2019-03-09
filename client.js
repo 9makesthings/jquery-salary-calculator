@@ -6,6 +6,7 @@ $( document ).ready( readyNow );
 
 let allEmployees = [];
 
+
 // This function will grab the employee info from the input fields and push it into the array
 function addEmployee(){
     console.log('in addEmployee');
@@ -28,9 +29,10 @@ function addEmployee(){
 
     // empty input fields
     // gave my input fields a class to empty the inputs instead of listing them individually, and it works!
-    $( '.employeeInputs' ).val( '' );
+    // DON'T FORGET THIS!!!! $( '.employeeInputs' ).val( '' );
 
     displayEmployees();
+    monthlyCosts();
     
 }
 
@@ -47,6 +49,21 @@ function displayEmployees(){
         
     }
 
+}
+
+
+function monthlyCosts(){
+    console.log('this updates the monthly cost total');
+
+    let monthlyTotal = 0;
+
+    // for loop to add all of the employee salaries in the array
+    for ( employee of allEmployees ){
+        monthlyTotal += employee.salary / 12;
+    }
+    console.log('monthlyTotal:', monthlyTotal);
+
+    $('#total span').text( '$' + monthlyTotal.toFixed(2) );
     
 }
 
@@ -54,4 +71,6 @@ function displayEmployees(){
 function readyNow(){
     console.log('in readyNow');
     $( '#submitBtn' ).on( 'click', addEmployee )
+    
+    // update monthlyTotal in DOM
 }

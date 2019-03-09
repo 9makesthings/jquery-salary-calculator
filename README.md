@@ -60,6 +60,6 @@ Script
     - create objects from user input x
     - push objects into array x
     - display array on DOM x
-    - display running total on DOM
+    - display running total on DOM x
     - make the running total turn red if exceeds max $
 
