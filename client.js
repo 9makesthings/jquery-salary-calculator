@@ -77,15 +77,21 @@ function removeEmployee () {
     console.log('This button will remove an employee.');
 
     // let i = allEmployees.length -1;
-    let employeeToRemove = $('#firstName').val();
+    let employeeToRemove = $('#idNum').val();
 
     for ( let i = 0; i < allEmployees.length; i++ ){
-        if ( employeeToRemove === allEmployees[i].first ){
+        if ( employeeToRemove === allEmployees[i].id ){
             allEmployees.splice( i, 1 );
         }
     }
 
     displayEmployees();
+    unMath();
+}
+
+function unMath(){
+    console.log('this will remove the employee\'s salary from total');
+    
 }
 
 
