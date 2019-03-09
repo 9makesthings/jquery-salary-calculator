@@ -77,9 +77,13 @@ function removeEmployee () {
     console.log('This button will remove an employee.');
 
     // let i = allEmployees.length -1;
-    // let employeeToRemove = allEmployees[i];
+    let employeeToRemove = $('#firstName').val();
 
-    allEmployees.pop();
+    for ( let i = 0; i < allEmployees.length; i++ ){
+        if ( employeeToRemove === allEmployees[i].first ){
+            allEmployees.splice( i, 1 );
+        }
+    }
 
     displayEmployees();
 }
