@@ -62,4 +62,9 @@ Script
     - display array on DOM x
     - display running total on DOM x
     - make the running total turn red if exceeds max $ x
+    - capture click for delete button to remove employee
+
+
+Stretchhhhhh
+    - 
 

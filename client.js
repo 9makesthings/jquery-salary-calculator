@@ -1,5 +1,4 @@
 
-console.log( 'ready to start' );
 
 $( document ).ready( readyNow );
 
@@ -73,10 +72,24 @@ function monthlyCosts(){
     
 }
 
+// function to remove an employee from the table when the button is clicked
+function removeEmployee () {
+    console.log('This button will remove an employee.');
+
+    // let i = allEmployees.length -1;
+    // let employeeToRemove = allEmployees[i];
+
+    allEmployees.pop();
+
+    displayEmployees();
+}
+
 
 function readyNow(){
-    console.log('in readyNow');
-    $( '#submitBtn' ).on( 'click', addEmployee )
+
+    $( '#submitButton' ).on( 'click', addEmployee );
     
-    // update monthlyTotal in DOM
+    // delete button to remove an employee
+    $( '#deleteButton' ).on( 'click', removeEmployee );
+
 }
