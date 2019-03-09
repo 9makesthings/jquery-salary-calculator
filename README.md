@@ -61,5 +61,5 @@ Script
     - push objects into array x
     - display array on DOM x
     - display running total on DOM x
-    - make the running total turn red if exceeds max $
+    - make the running total turn red if exceeds max $ x
 

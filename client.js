@@ -45,7 +45,7 @@ function displayEmployees(){
 
     for ( employee of allEmployees ){
         // console.log( 'employee:', employee );
-        updateTable.append(`<tr><td> ${employee.first} </td><td> ${employee.last} </td><td> ${employee.id} </td><td> ${employee.title} </td><td> ${employee.salary} </td></tr>`);
+        updateTable.append(`<tr><td> ${employee.first} </td><td> ${employee.last} </td><td> ${employee.id} </td><td> ${employee.title} </td><td> $${employee.salary} </td></tr>`);
         
     }
 
@@ -61,7 +61,13 @@ function monthlyCosts(){
     for ( employee of allEmployees ){
         monthlyTotal += employee.salary / 12;
     }
-    console.log('monthlyTotal:', monthlyTotal);
+
+    // set total background color to red if monthlyTotal exceeds max
+    if ( monthlyTotal > 20000 ){
+        console.log('Turn red!');
+        $( '#totalContainer' ).css( 'background-color', 'red' );
+        
+    }
 
     $('#total span').text( '$' + monthlyTotal.toFixed(2) );
     
