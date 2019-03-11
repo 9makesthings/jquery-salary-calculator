@@ -5,6 +5,9 @@ $( document ).ready( readyNow );
 
 let allEmployees = [];
 
+let monthlyTotal; // moved where this variable was defined so I could call it in multiple functions.
+// realized I needed to set it but not assign a value here so it wouldn't throw off new values added.
+
 
 // This function will grab the employee info from the input fields and push it into the array
 function addEmployee(){
@@ -35,7 +38,7 @@ function addEmployee(){
     
 }
 
-// function to display employees on the DOM
+// function to display employees on the DOM as they are added to the array
 function displayEmployees(){
     console.log('in displayEmployees'); 
 
@@ -50,13 +53,13 @@ function displayEmployees(){
 
 }
 
-
+// Function to calculate monthly totals of salary costs
 function monthlyCosts(){
     console.log('this updates the monthly cost total');
 
-    let monthlyTotal = 0;
+    monthlyTotal = 0;
 
-    // for loop to add all of the employee salaries in the array
+    // for loop to add all of the employee salaries in the array together
     for ( employee of allEmployees ){
         monthlyTotal += employee.salary / 12;
     }
@@ -68,6 +71,7 @@ function monthlyCosts(){
         
     }
 
+    // update text in the DOM with the new monthlyTotal
     $('#total span').text( '$' + monthlyTotal.toFixed(2) );
     
 }
@@ -76,30 +80,38 @@ function monthlyCosts(){
 function removeEmployee () {
     console.log('This button will remove an employee.');
 
-    // let i = allEmployees.length -1;
-    let employeeToRemove = $('#idNum').val();
+    let employeeID = $('#idNum').val();
 
+    // variable to determine how much to take out of the current monthlyTotal
+    let removeMonthly = 0;
+
+    // for loop finds each employee matching the ID enter in the field 
     for ( let i = 0; i < allEmployees.length; i++ ){
-        if ( employeeToRemove === allEmployees[i].id ){
+
+        let person = allEmployees[i];
+        // conditional to say the if that ID is found in the array of employees, to splice that employee from the array
+        if ( person.id === employeeID ){
             allEmployees.splice( i, 1 );
+            // Finding the value of the amount to remove from the monthly total 
+            // by finding the value of the specific employee's salary and dividing by 12
+            removeMonthly = person.salary / 12;
+            console.log( 'employeeToRemove:', person );    
         }
     }
 
-    displayEmployees();
-    unMath();
-}
+    // Define the new monthly total value and update value in DOM
+    monthlyTotal = monthlyTotal - removeMonthly;
+    $('#total span').text('$' + monthlyTotal.toFixed(2));
 
-function unMath(){
-    console.log('this will remove the employee\'s salary from total');
-    
+    // need to re-display employee array on DOM to remove employee from DOM
+    displayEmployees(); 
 }
 
 
 function readyNow(){
-
+    // submit button to add each employee to DOM
     $( '#submitButton' ).on( 'click', addEmployee );
     
     // delete button to remove an employee
     $( '#deleteButton' ).on( 'click', removeEmployee );
-
 }
