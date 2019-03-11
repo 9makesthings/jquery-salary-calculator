@@ -19,7 +19,7 @@
 
     <h3>Add Employee</h3>
 
-    <div id="inputFields">
+    <form id="inputFields">
 
         <input type="text" id="firstName" class="employeeInputs" placeholder="First Name">
         <input type="text" id="lastName" class="employeeInputs" placeholder="Last Name">
@@ -27,11 +27,12 @@
         <input type="text" id="jobTitle" class="employeeInputs" placeholder="Title">
         <input type="number" id="annualSalary" class="employeeInputs" placeholder="annualSalary">
 
-
-    </div>
+        <!-- figure out how to bring submit button into form, validate form in js, add labels above input fields -->
+        <br>
+        <button id="submitButton">Submit</button>
         
-    
-    <button id="submitButton">Submit</button>
+    </form>
+        
 
 
 
@@ -45,6 +46,7 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Annual Salary</th>
+                <!-- <th>Delete</th> -->
             </tr>            
         </thead>
 
@@ -54,11 +56,14 @@
             </tr> -->
         </tbody>
 
+        <tfoot>
+            <tr>
+                <td id="total" colspan="5" >Monthly Total: <span>$0.00</span></td>
+            </tr>
+        </tfoot>
+
     </table>
 
-    <div id="totalContainer">
-        <p id="total">Monthly Total: <span>$0.00</span></p>
-    </div>
 
     <div class="remove">
         <p id="remove-note">To remove employee, enter ID number in field above and press 'Remove Employee'. <br></p>
